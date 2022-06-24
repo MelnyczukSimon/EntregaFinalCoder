@@ -15,15 +15,17 @@ def Familia(self):
       documentoDeTexto =f"{abuela.nombre},{abuela.jubilada},{abuela.cumpleanios},<br>{perro.nombre},{perro.raza},{perro.edad},<br>{padre.nombre},{padre.apellido},{padre.email},{padre.profesion},{padre.cumpleanios},"
       return HttpResponse(documentoDeTexto)
 
-#def perro(self):
-      perro = Perro  (nombre='simon jr',raza='caniche',edad=123)
-      perro.save()
-      documentoDeTexto =f"--->perro:{perro.nombre},{perro.raza}"
-      return HttpResponse(documentoDeTexto)
+def inicio(request):
+    return render(request,"CoderApp/inicio.html")
 
-#def padre(self):
-      padre = Padre  (nombre='Eduardo',apellido='Melnyczuk',email='racingPasion@hotmal.com.ar',profesion='jardinero',cumpleanios='1960-01-01')
-      padre.save()
-      documentoDeTexto =f"--->padre:{padre.nombre},{padre.apellido},{padre.email},{padre.profesion},{padre.cumpleanios},"
-      return HttpResponse(documentoDeTexto)
-    
+def cursos(request):
+     return render(request,"CoderApp/cursos.html")
+
+def profesores(request):
+     return render(request,"CoderApp/profesores.html")
+
+def estudiantes(request):
+      return render(request,"CoderApp/estudiantes.html")
+
+def entregables(request):
+      return render(request,"CoderApp/entregables.html")
