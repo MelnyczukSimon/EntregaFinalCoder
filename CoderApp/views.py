@@ -29,3 +29,6 @@ def estudiantes(request):
 
 def entregables(request):
       return render(request,"CoderApp/entregables.html")
+
+
+
