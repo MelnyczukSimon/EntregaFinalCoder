@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-admin.site.register(Padre)
-admin.site.register(Hijo)
-admin.site.register(Perro)
-admin.site.register(Abuela)
+admin.site.register(Planta)
+admin.site.register(Arbol)
+admin.site.register(Cactus)

@@ -15,12 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from CoderApp.views import Familia
-from CoderApp.models import Abuela
-from CoderApp.models import Perro
-#from CoderApp.views import perro
-from CoderApp.models import Padre
-#from CoderApp.views import padre
 
 
 
@@ -29,6 +23,5 @@ from CoderApp.models import Padre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Familia/', Familia),
     path('CoderApp/', include('CoderApp.urls')),
    ]

@@ -24,12 +24,12 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'Inicio'%}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'profesores'%}">profesores</a>
-                <a class="navbar-brand" href="{% url 'cursos'%}">cursos</a>
-                <a class="navbar-brand" href="{% url 'estudiantes'%}">estudiantes</a>
-                <a class="navbar-brand" href="{% url 'entregables'%}">entregables</a>
-                <a class="btn btn-primary" href="#signup">INICIAR</a>
+             <p><a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'planta' %}">planta</a>
+                <a class="navbar-brand" href="{% url 'arbol'%}">arbol</a>
+                <a class="navbar-brand" href="{% url 'cactus' %}">cactus</a>
+                <a class="navbar-brand" href="{% url 'cursoFormulario'%}">cursoFormulario</a>
+            </p>
             </div>
         </nav>
         <div class="row">
@@ -40,24 +40,6 @@
             </div>
             <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
         </div>      
-
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">Muestra web Intermedia de Django - CoderHouse</h1>
-
-                            <h1 class="mb-2">Estoy reutilizando un diseño</h1>
-                            
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
 
         {% block contenidoQueCambia %}
             

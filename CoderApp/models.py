@@ -1,33 +1,18 @@
 from django.db import models
 
 # Create your models here.
-class Familia(models.Model):
-
+class Planta(models.Model):
     nombre = models.CharField(max_length=40)
+    nombreCientifico = models.CharField(max_length=40)
     cantidad = models.IntegerField()
-    direccion = models.CharField(max_length=20)
+    deInterior = models.CharField(max_length=40)
     
+class Arbol(models.Model):
+    nombre = models.CharField(max_length=40)
+    nombreCientifico = models.CharField(max_length=40)
+    alturaMax = models.IntegerField()
 
-
-class Hijo(models.Model):
+class Cactus(models.Model):
     nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
-    email = models.EmailField()
-    cumpleanios = models.DateField()
-
-class Padre(models.Model):
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
-    email = models.EmailField()
-    profesion = models.CharField(max_length=30)
-    cumpleanios = models.DateField()
-
-class Abuela(models.Model):
-    nombre = models.CharField(max_length=30) 
-    jubilada = models.BooleanField()
-    cumpleanios = models.DateField()
-
-class Perro(models.Model):
-    nombre = models.CharField(max_length=30)
-    raza = models.CharField(max_length=20)
-    edad = models.IntegerField()
+    nombreCientifico = models.CharField(max_length=40)
+    tiempoSinAgua = models.IntegerField()
