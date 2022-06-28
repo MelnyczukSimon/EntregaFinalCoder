@@ -49,9 +49,9 @@ def registrarCactus(request):
      print('test')
      nombre = request.POST['txtnombre']
      nombreCientifico = request.POST['txtnombreCientifico']
-     tiempoSinAgua = request.POST['txttiempoSinAgua']
+     diasSinAgua = request.POST['txtdiasSinAgua']
 
-     cactus = Cactus.objects.create(nombre=nombre, nombreCientifico=nombreCientifico, tiempoSinAgua=tiempoSinAgua)
+     cactus = Cactus.objects.create(nombre=nombre, nombreCientifico=nombreCientifico, diasSinAgua=diasSinAgua)
 
      return redirect('cactus')
 

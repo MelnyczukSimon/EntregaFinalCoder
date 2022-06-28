@@ -19,4 +19,4 @@ class Arbol(models.Model):
 class Cactus(models.Model):
     nombre = models.CharField(max_length=30)
     nombreCientifico = models.CharField(max_length=40)
-    tiempoSinAgua = models.IntegerField()
+    diasSinAgua = models.IntegerField()

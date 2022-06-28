@@ -17,7 +17,7 @@
                     <input type="text" name="txtnombreCientifico" class="from-control" minlength="2" maxlength="15" placeholder="Nombre Cientifico del cactus" required >
                 </div>
                 <div class="form-group">
-                    <input type="number" name="txttiempoSinAgua" class="from-control" minlength="2" maxlength="15" placeholder="tiempo sin agua del cactus"  required>
+                    <input type="number" name="txtdiasSinAgua" class="from-control" minlength="2" maxlength="15" placeholder="Dias sin Agua"  required>
                 </div>
                 <button type="submit" class="btn btn-success btn-block twxt-pink">Guardar cactus </button>
             </form>
@@ -32,7 +32,7 @@
                     <tr>
                         <th>nombre</th>
                         <th>nombreCientifico</th>
-                        <th>tiempoSinAgua</th>
+                        <th>diasSinAgua</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,7 +40,7 @@
                     <tr>
                         <td> {{c.nombre}}</td>
                         <td> {{c.nombreCientifico}}</td>
-                        <td> {{c.tiempoSinAgua}}</td>
+                        <td> {{c.diasSinAgua}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
