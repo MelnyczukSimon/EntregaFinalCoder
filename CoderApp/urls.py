@@ -1,9 +1,12 @@
 from django.urls import path
-from CoderApp import views
+from .import views
+#app_name='CoderApp'
 urlpatterns=[
-    path('',views.Inicio,name='Inicio'),#esta-era-nuestra-primer-view
+    path('',views.inicio,name='inicio'),#esta-era-nuestra-primer-view
     path('planta',views.planta,name='planta'),
     path('arbol',views.arbol,name='arbol'),
     path('cactus',views.cactus,name='cactus'),
-    path('cursoFormulario',views.cursoFormulario,name="cursoFormulario"),
+    path('registrarArbol',views.registrarArbol,name='registrarArbol'),
+    path('registrarPlanta',views.registrarPlanta,name='registrarPlanta'),
+    path('registrarCactus',views.registrarCactus,name='registrarCactus'),
  ]

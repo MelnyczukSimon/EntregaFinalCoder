@@ -1,50 +1,60 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from CoderApp.models import Planta
 from CoderApp.models import Arbol
 from CoderApp.models import Cactus
-from CoderApp.forms import CursoFormulario
+#from CoderApp.forms import CursoFormulario
 
-def Inicio(request):
-     return render(request,"CoderApp/Inicio.html")
+def inicio(request):
+     return render(request,"inicio.html")
 
 def planta(request):
      planta = Planta.objects.all()
      print(planta)
-     return render(request,"CoderApp/planta.html",{'planta':planta})
+     return render(request,"planta.html",{'planta':planta})
 
 def arbol(request):
      arbol = Arbol.objects.all()
      print(arbol)
-     return render(request,"CoderApp/arbol.html",{'arboles':arbol})
+     return render(request,"arbol.html",{'arboles':arbol})
 
 def cactus(request):
      cactus = Cactus.objects.all()
      print(cactus)
-     return render(request,"CoderApp/cactus.html",{'cactus':cactus})
+     return render(request,"cactus.html",{'cactus':cactus})
 
-def cursoFormulario(request):
+def registrarArbol(request):
+     print(request.POST)
+     print('test')
+     nombre = request.POST['txtnombre']
+     nombreCientifico = request.POST['txtnombreCientifico']
+     alturaMax = request.POST['txtalturaMax']
 
-      if request.method == 'POST':
+     arbol = Arbol.objects.create(nombre=nombre, nombreCientifico=nombreCientifico, alturaMax=alturaMax)
 
-            miFormulario = CursoFormulario(request.POST) #aquí mellega toda la información del html
+     return redirect('arbol')
 
-            print(miFormulario)
+def registrarPlanta(request):
+     print(request.POST)
+     print('test')
+     nombre = request.POST['txtnombre']
+     nombreCientifico = request.POST['txtnombreCientifico']
+     deInterior = request.POST['txtdeInterior']
 
-            if miFormulario.is_valid:   #Si pasó la validación de Django
+     planta = Planta.objects.create(nombre=nombre, nombreCientifico=nombreCientifico, deInterior=deInterior)
 
-                  informacion = miFormulario.cleaned_data
-                  print(informacion)
-                  planta = Planta (nombre=informacion['nombre'], nombreCientifico =informacion['raza']) 
+     return redirect('planta')
 
-                  planta.save()
+def registrarCactus(request):
+     print(request.POST)
+     print('test')
+     nombre = request.POST['txtnombre']
+     nombreCientifico = request.POST['txtnombreCientifico']
+     tiempoSinAgua = request.POST['txttiempoSinAgua']
 
-                  return render(request, "CoderApp/inicio.html") #Vuelvo al inicio o a donde quieran
+     cactus = Cactus.objects.create(nombre=nombre, nombreCientifico=nombreCientifico, tiempoSinAgua=tiempoSinAgua)
 
-      else: 
+     return redirect('cactus')
 
-            miFormulario= CursoFormulario() #Formulario vacio para construir el html
-
-      return render(request, "CoderApp/cursoFormulario.html", {"miFormulario":miFormulario})
 
 
 
