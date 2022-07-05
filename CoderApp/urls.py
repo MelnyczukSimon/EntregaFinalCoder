@@ -9,4 +9,5 @@ urlpatterns=[
     path('registrarArbol',views.registrarArbol,name='registrarArbol'),
     path('registrarPlanta',views.registrarPlanta,name='registrarPlanta'),
     path('registrarCactus',views.registrarCactus,name='registrarCactus'),
+    path('busqueda',views.busqueda,name='busqueda'),
  ]

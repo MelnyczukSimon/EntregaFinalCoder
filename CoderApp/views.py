@@ -4,6 +4,7 @@ from CoderApp.models import Arbol
 from CoderApp.models import Cactus
 #from CoderApp.forms import CursoFormulario
 
+
 def inicio(request):
      return render(request,"inicio.html")
 
@@ -55,6 +56,11 @@ def registrarCactus(request):
 
      return redirect('cactus')
 
-
-
-
+def busqueda(request):
+     if request.method == 'GET': 
+          return render(request,"busqueda.html")
+     elif request.method == 'POST':
+          print(request.POST)
+          busqueda = request.POST['searchField']
+          arbol = Arbol.objects.filter(nombre__icontains=busqueda) | Arbol.objects.filter(nombreCientifico__icontains=busqueda)
+          return render(request,"busqueda.html",{'arbol':arbol})

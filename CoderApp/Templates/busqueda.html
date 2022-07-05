@@ -1,0 +1,43 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<title> {% block tittle %} Busqueda {% endblock %}</title>
+<div class="row">
+    <div class="col">
+        <form action="{% url 'busqueda' %}" method="POST">{% csrf_token %}
+            <div class="form-group">
+                <input class="form-control form-control-lg" id="searchField" minlength="4" type="text" placeholder="Busque su arbol" required/>
+            </div>
+            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h1>Listado de Arboles</h1>
+        <div class="table-responsive">
+             <table class="table table-striped">
+                <thead> 
+                    <tr>
+                        <th>nombre</th>
+                        <th>nombreCientifico</th>
+                        <th>alturaMax</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in arbol %}
+                    <tr>
+                        <td> {{c.nombre}}</td>
+                        <td> {{c.nombreCientifico}}</td>
+                        <td> {{c.alturaMax}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
